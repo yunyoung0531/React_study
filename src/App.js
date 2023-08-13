@@ -58,7 +58,7 @@ function App() {
         <Route path='/event' element={<Event/>}>
           {/* Nested Routes */}
           <Route path='one' element={<p>첫 주문시 양배추즙 서비스</p>}/>
-          <Route path='two' element={<p>생일 기념 쿠폰 받기</p>}/>
+          <Route path='two' element={<p>생일 기념 쿠폰</p>}/>
           <Route/>
         </Route>
         <Route path='*' element={<>404</>}/>
