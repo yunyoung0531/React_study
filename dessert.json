@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 3,
+        "title" : "Banana waffle",
+        "content" : "very sweet",
+        "price" : 120000,
+        "image": "bananaWaffle.png"
+    },
+    {
+        "id" : 4,
+        "title" : "Plain Waffle",
+        "content" : "Born in Italia",
+        "price" : 120000,
+        "image": "plainWaffle.png"
+    },
+    {
+        "id" : 5,
+        "title" : "Strawberry Waffle",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "strawberryWaffle.png"
+    }
+]
