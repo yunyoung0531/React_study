@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import {Button, Container, Nav, Navbar} from 'react-bootstrap';
+import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import data from './data.js';
 import ItemCard from './ItemCard';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
@@ -13,9 +13,11 @@ import axios from 'axios';
 
 function App() {
 
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
+  let [clickCnt, setClickCnt] = useState(0);
+  let [loading, setLoading] = useState(false);
   let navigate = useNavigate();
-
+  
   return (
     <div className='App'>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -32,17 +34,29 @@ function App() {
       <Routes>
         <Route path='/' element={<>
           <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
-          <ItemCard/>
-          <ItemCard/>
-          <ItemCard/>
-          <ItemCard/>
+        <ItemCard shoes={shoes}/>
+        {loading && <Spinner animation="border" variant="dark" />}
+        <br/>
+        {(clickCnt == 0 || clickCnt == 1) ? 
         <Button onClick={() => {
-          axios.get('https://codingapple1.github.io/shop/data2.json')
-          .then((result)=>{ console.log(result.data) 
-          }).catch(()=>{
-            console.log('실패')
+          //로딩중UI 띄우기
+          setLoading(true);
+          axios.get(clickCnt == 0 ? 'https://codingapple1.github.io/shop/data2.json' : 'https://codingapple1.github.io/shop/data3.json')
+          .then((result)=>{ 
+            let copy = [...shoes, ...result.data];
+            setShoes(copy);
+            console.log("성공");
+            //로딩중UI 숨기기
+            setLoading(false);
+            setClickCnt(clickCnt + 1);
           })
-        }}>버튼</Button>
+          .catch(()=>{
+            console.log('실패')
+            setLoading(false);
+            //로딩중UI 숨기기
+          })
+        }}>버튼</Button> : null}
+
         </>}/>
 
 

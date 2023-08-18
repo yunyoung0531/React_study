@@ -1,0 +1,79 @@
+[
+    {
+        "id" : 3,
+        "title" : "Banana waffle",
+        "content" : "very sweet",
+        "price" : 120000,
+        "image": "bananaWaffle.png"
+    },
+    {
+        "id" : 4,
+        "title" : "Plain Waffle",
+        "content" : "Born in Italia",
+        "price" : 120000,
+        "image": "plainWaffle.png"
+    },
+    {
+        "id" : 5,
+        "title" : "Strawberry Waffle",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "strawberryWaffle.png"
+    },
+    {
+        "id" : 6,
+        "title" : "Strawberry Waffle",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "strawberryWaffle.png"
+    },
+    {
+        "id" : 7,
+        "title" : "Black Cake",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "blackCake.png"
+    },
+    {
+        "id" : 8,
+        "title" : "HBD Cake",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "HBDcake.png"
+    },
+    {
+        "id" : 9,
+        "title" : "Oreo Cake",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "oreoCake.png"
+    },
+    {
+        "id" : 10,
+        "title" : "Choco Donut",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "chocoDonut.png"
+    },
+    {
+        "id" : 11,
+        "title" : "Donut",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "donut.png"
+    },
+    {
+        "id" : 12,
+        "title" : "White Donut",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "whiteDonut.png"
+    },
+    {
+        "id" : 13,
+        "title" : "Strawberry Pie",
+        "content" : "Born in France",
+        "price" : 120000,
+        "image": "strawberryPie.png"
+    }
+]

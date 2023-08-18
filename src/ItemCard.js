@@ -4,8 +4,8 @@ import data from './data.js';
 import './App.css';
 import  'bootstrap/dist/css/bootstrap.min.css';
 
-function ItemCard() {
-    let [shoes] = useState(data);
+function ItemCard({shoes}) {
+    //let [shoes, setShoes] = useState(data);
 
     return(
         <>
