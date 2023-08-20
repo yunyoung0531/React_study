@@ -16,6 +16,7 @@ function App() {
   let [shoes, setShoes] = useState(data);
   let [clickCnt, setClickCnt] = useState(0);
   let [loading, setLoading] = useState(false);
+  let [inventory, setInventory] = useState([10, 11, 12]);
   let navigate = useNavigate();
   
   return (

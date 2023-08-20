@@ -3,7 +3,7 @@ import chocolateCakeImage from '../images/chocolateCake.png';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { Alert } from 'react-bootstrap';
+import { Alert, Nav } from 'react-bootstrap';
 import Swal from "sweetalert2";
 
 
@@ -12,6 +12,7 @@ function Detail(props) {
     let [alert, setAlert] = useState(1);
     let [input, setInput] = useState('');
     let [warning, setWarning] = useState(false);
+    let [tab, setTab] = useState(0);
     
     useEffect(()=>{
         let timer = setTimeout(()=>{ setAlert(0) }, 2000);
@@ -42,8 +43,18 @@ function Detail(props) {
 
     let {id} = useParams();
 
+    let [fade, setFade] = useState('');
+
+    useEffect(()=>{
+        setTimeout(()=>{setFade('end')}, 100)
+        return () => {
+            setFade('')
+        }
+    }, [])
+
     return (
         <>
+        <div className={'start ' + fade}>
         <div className="container">
         {alert == 1 ? 
         (<div className='alert alert-warning'>
@@ -69,8 +80,40 @@ function Detail(props) {
             </div>
         </div>
         </div>
+
+        <Nav variant="tabs"  defaultActiveKey="link0">
+            <Nav.Item>
+            <Nav.Link eventKey="link0" onClick={() => setTab(0)}>버튼0</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link eventKey="link1" onClick={() => setTab(1)}>버튼1</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link eventKey="link2" onClick={() => setTab(2)}>버튼2</Nav.Link>
+            </Nav.Item>
+        </Nav>
+        <TabContent shoes={props.shoes} tab={tab}/>
+        </div>
         </>
     )
+}
+
+function TabContent(props) {
+    let [fade, setFade] = useState('');
+    useEffect(()=>{
+        setTimeout(()=>{setFade('end')}, 100)
+        return () => {
+            setFade('')
+        }
+    }, [props.tab])
+
+    if (props.tab == 0) {
+        return <div className={'start ' + fade}>내용0 </div>
+    } else if (props.tab == 1) {
+        return <div className={'start ' + fade}>내용1</div>
+    } else if (props.tab == 2){
+        return <div className={'start ' + fade}>내용2</div>
+    }
 }
 
 export default Detail;
