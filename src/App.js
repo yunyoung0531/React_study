@@ -10,6 +10,7 @@ import About from './pages/about';
 import Event from './pages/Event';
 import BackgroundImage from './images/HardBoiledSurfers.png';
 import axios from 'axios';
+import Cart from './pages/Cart';
 
 function App() {
 
@@ -77,6 +78,8 @@ function App() {
           <Route/>
         </Route>
         <Route path='*' element={<>404</>}/>
+
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
 
 
