@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { Alert, Nav } from 'react-bootstrap';
 import Swal from "sweetalert2";
+import { addToCart } from '../store/dataSlice';
+import { useDispatch } from 'react-redux';
 
 
 function Detail(props) {
@@ -13,6 +15,8 @@ function Detail(props) {
     let [input, setInput] = useState('');
     let [warning, setWarning] = useState(false);
     let [tab, setTab] = useState(0);
+
+    let dispatch = useDispatch();
     
     useEffect(()=>{
         let timer = setTimeout(()=>{ setAlert(0) }, 2000);
@@ -76,7 +80,9 @@ function Detail(props) {
             <button onClick={() => {setInput(1)}}>클릭</button>
             <p>{props.shoes[id].content}</p>
             <p>{props.shoes[id].price}원</p>
-            <button className="btn btn-danger">주문하기</button> 
+            <button className="btn btn-danger" onClick={()=>{
+                dispatch(addToCart({id : 0, name : 'Strawberry Tart', count : 4}))
+            }}>주문하기</button> 
             </div>
         </div>
         </div>

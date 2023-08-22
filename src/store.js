@@ -1,22 +1,13 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
+import user from './store/userSlice';
+import data from './store/dataSlice';
 
-let user = createSlice({
-    name: 'user',
-    initialState: 'kim'
-})
+export let { changeName, changeAge } = user.actions
+export let { changePlusCnt, changeMinusCnt } = data.actions
 
 let stock = createSlice({
     name: 'stock',
     initialState: [10, 11, 12]
-})
-
-let data = createSlice({
-    name: 'data',
-    initialState:
-    [
-        {id : 0, name : 'White and Black', count : 2},
-        {id : 2, name : 'Grey Yordan', count : 1}
-    ]
 })
 
 export default configureStore({
@@ -25,4 +16,4 @@ export default configureStore({
         stock : stock.reducer,
         data : data.reducer
     }
-})
+}) 
