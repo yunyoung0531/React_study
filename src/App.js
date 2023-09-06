@@ -24,7 +24,7 @@ function App() {
     <div className='App'>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand onClick={()=>{ navigate('/') }}>Dessert</Navbar.Brand>
+          <Navbar.Brand onClick={()=>{ navigate('/') }} className='logo-design'>Dessert</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{ navigate('/about')}}>About</Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/event') }}>Event</Nav.Link>

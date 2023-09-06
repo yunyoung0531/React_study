@@ -15,6 +15,9 @@ let data = createSlice({
         addToCart(state, action) {
             state.push(action.payload);
         },
+        removeToCart(state, action) {
+            state.pop(action.payload);
+        },
         changeMinusCnt(state, action) {
             let idNum = state.findIndex((a)=>{ return a.id === action.payload })
             state[idNum].count--;
@@ -23,6 +26,6 @@ let data = createSlice({
 })
 
 
-export let { changePlusCnt, changeMinusCnt, addToCart } = data.actions;
+export let { changePlusCnt, changeMinusCnt, addToCart, removeToCart } = data.actions;
 
 export default data;

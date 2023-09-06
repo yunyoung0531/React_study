@@ -73,3 +73,23 @@
   transition: opacity 0.5s;
 }
 
+.logo-design {
+  cursor: pointer;
+}
+
+.modal-cart {
+  margin-top: 15%;
+}
+
+Button.goToCartBtn {
+  background-color: #6E9FED; 
+  color: white;
+}
+
+button.order-btn {
+  background-color: #6E9FED;
+}
+
+button.order-btn :hover {
+  background-color: #0062ff !important;
+}

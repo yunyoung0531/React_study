@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Button } from "react-bootstrap";
 import { changePlusCnt, changeMinusCnt, changeName } from "../store";
 import { changeAge } from "../store";
+import { removeToCart } from "../store/dataSlice";
 
 function Cart() {
 
@@ -23,6 +24,7 @@ function Cart() {
                     <th>상품명</th>
                     <th>수량</th>
                     <th>변경하기</th>
+                    <th>삭제하기</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +41,9 @@ function Cart() {
                                     <Button onClick={()=>{
                                     dispatch(changePlusCnt(state.data[i].id));
                                     }}>+</Button></td>
+                                <td><Button onClick={()=>{
+                                    dispatch(removeToCart(state.data[i].id));
+                                }}>삭제</Button></td>
                             </tr>
                         )
                     })

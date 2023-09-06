@@ -6,8 +6,11 @@ import { useEffect } from 'react';
 import { Alert, Nav } from 'react-bootstrap';
 import Swal from "sweetalert2";
 import { addToCart } from '../store/dataSlice';
+import { removeToCart } from '../store/dataSlice';
 import { useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { changePlusCnt } from '../store';
+import { Button, Modal } from 'react-bootstrap';
 
 function Detail(props) {
     let [count, setCount] = useState(0);
@@ -17,6 +20,9 @@ function Detail(props) {
     let [tab, setTab] = useState(0);
 
     let dispatch = useDispatch();
+    let {id} = useParams();
+    let selectedItem = props.shoes[id];
+    let cart = useSelector(state => state.data);
     
     useEffect(()=>{
         let timer = setTimeout(()=>{ setAlert(0) }, 2000);
@@ -45,8 +51,6 @@ function Detail(props) {
         }
     }, [warning]);
 
-    let {id} = useParams();
-
     let [fade, setFade] = useState('');
 
     useEffect(()=>{
@@ -55,6 +59,11 @@ function Detail(props) {
             setFade('')
         }
     }, [])
+
+    // 모달창 관련 변수
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -80,12 +89,37 @@ function Detail(props) {
             <button onClick={() => {setInput(1)}}>클릭</button>
             <p>{props.shoes[id].content}</p>
             <p>{props.shoes[id].price}원</p>
-            <button className="btn btn-danger" onClick={()=>{
-                dispatch(addToCart({id : 0, name : 'Strawberry Tart', count : 4}))
+            <button className="btn order-btn" onClick={()=>{
+                handleShow();
+                let isItemInCart = cart.some(item => item.id === selectedItem.id);
+                if (!isItemInCart) {
+                    dispatch(addToCart({
+                        id: selectedItem.id,
+                        name: selectedItem.title,
+                        count: 1
+                    }));
+                } else {
+                    dispatch(changePlusCnt(selectedItem.id));
+                }
             }}>주문하기</button> 
             </div>
         </div>
         </div>
+
+        <Modal show={show} onHide={handleClose} animation={false} className='modal-cart'>
+        <Modal.Header closeButton>
+            {/* <Modal.Title>.</Modal.Title> */}
+        </Modal.Header>
+        <Modal.Body>장바구니에 담았어요 !</Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+                쇼핑 계속 하기
+            </Button>
+            <Button variant="light" onClick={handleClose} className='goToCartBtn'>
+                장바구니로 이동
+            </Button>
+        </Modal.Footer>
+        </Modal>
 
         <Nav variant="tabs"  defaultActiveKey="link0">
             <Nav.Item>
