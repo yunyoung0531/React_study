@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import chocolateCakeImage from '../images/chocolateCake.png';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { Alert, Nav } from 'react-bootstrap';
@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { changePlusCnt } from '../store';
 import { Button, Modal } from 'react-bootstrap';
+import Cart from './Cart';
 
 function Detail(props) {
     let [count, setCount] = useState(0);
@@ -23,6 +24,8 @@ function Detail(props) {
     let {id} = useParams();
     let selectedItem = props.shoes[id];
     let cart = useSelector(state => state.data);
+
+    let navigate = useNavigate();
     
     useEffect(()=>{
         let timer = setTimeout(()=>{ setAlert(0) }, 2000);
@@ -115,7 +118,7 @@ function Detail(props) {
             <Button variant="secondary" onClick={handleClose}>
                 쇼핑 계속 하기
             </Button>
-            <Button variant="light" onClick={handleClose} className='goToCartBtn'>
+            <Button variant="light" onClick={()=>{navigate('/cart')}} className='goToCartBtn'>
                 장바구니로 이동
             </Button>
         </Modal.Footer>

@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import data from './data.js';
 import ItemCard from './ItemCard';
@@ -13,6 +13,15 @@ import axios from 'axios';
 import Cart from './pages/Cart';
 
 function App() {
+
+  let obj = {name : 'kim'}
+  localStorage.setItem('data', JSON.stringify(obj));
+  let 꺼냄 = localStorage.getItem('data');
+  console.log(JSON.parse(꺼냄));
+
+  useEffect(()=>{
+    localStorage.setItem('watched', JSON.stringify([]));
+  })
 
   let [shoes, setShoes] = useState(data);
   let [clickCnt, setClickCnt] = useState(0);
