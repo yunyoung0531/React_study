@@ -93,3 +93,64 @@ button.order-btn {
 button.order-btn :hover {
   background-color: #0062ff !important;
 }
+
+.watched-item {
+  /* font-weight: 500; */
+  display: flex;
+  /* justify-content: center; */
+  text-align: left;
+  margin-top: -15px;
+  margin-left: 75px;
+  margin-bottom: -44px;
+  font-size: 120%;
+}
+
+.box {
+  margin : 70px; 
+  padding : 30px;
+  border : 1px solid rgb(182, 182, 182);
+  border-radius : 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.07), 0 6px 6px rgba(0,0,0,0.07);
+}
+
+.recent-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  flex-basis: 48%; /* 모바일 뷰에서는 2개의 이미지를 한 줄에 표시 */
+  max-width: 48%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.recent-items-container {
+  display: flex;
+  justify-content: center;
+  /* overflow-x: auto; */
+  flex-wrap: wrap;
+}
+
+.recent-item-img {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .recent-item {
+    flex-basis: 20%; /* 3개의 이미지를 한 줄에 표시 */
+    max-width: 20%;
+  }
+}
+
+/* 데스크탑 뷰 */
+@media (min-width: 1024px) {
+  .recent-item {
+    flex-basis: calc(100% / 7); /* 6개의 이미지를 한 줄에 표시 */
+    max-width: calc(100% / 7);
+    padding: 10px;
+  }
+}

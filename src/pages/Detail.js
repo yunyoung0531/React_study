@@ -26,6 +26,23 @@ function Detail(props) {
     let cart = useSelector(state => state.data);
 
     let navigate = useNavigate();
+
+    useEffect(()=>{
+        console.log(selectedItem.id);
+        let watchedItems = localStorage.getItem('watched');
+        if (watchedItems) {
+            watchedItems = JSON.parse(watchedItems);
+        } else {
+            watchedItems = [];
+        }
+        if(!watchedItems.includes(selectedItem.id)) {
+            watchedItems.push(selectedItem.id);
+        }
+        while (watchedItems.length > 6) {
+            watchedItems.shift();
+        }
+        localStorage.setItem('watched', JSON.stringify(watchedItems));
+    }, [])
     
     useEffect(()=>{
         let timer = setTimeout(()=>{ setAlert(0) }, 2000);

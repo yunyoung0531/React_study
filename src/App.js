@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import data from './data.js';
 import ItemCard from './ItemCard';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
 import Detail from './pages/Detail';
 import About from './pages/about';
 import Event from './pages/Event';
@@ -13,21 +13,35 @@ import axios from 'axios';
 import Cart from './pages/Cart';
 
 function App() {
-
-  let obj = {name : 'kim'}
-  localStorage.setItem('data', JSON.stringify(obj));
-  let 꺼냄 = localStorage.getItem('data');
-  console.log(JSON.parse(꺼냄));
-
-  useEffect(()=>{
-    localStorage.setItem('watched', JSON.stringify([]));
-  })
-
   let [shoes, setShoes] = useState(data);
   let [clickCnt, setClickCnt] = useState(0);
   let [loading, setLoading] = useState(false);
   let [inventory, setInventory] = useState([10, 11, 12]);
   let navigate = useNavigate();
+
+  // let obj = {name : 'kim'}
+  // localStorage.setItem('data', JSON.stringify(obj));
+  // let 꺼냄 = localStorage.getItem('data');
+  // console.log(JSON.parse(꺼냄));
+
+  let [watchedItems, setWatchedItems] = useState([]);
+  let watchedItemImage = localStorage.getItem('watched');
+  const watchedImg = watchedItemImage ? JSON.parse(watchedItemImage).map(id => shoes[id]) : [];
+  //누가 Detail 페이지 접속하면
+  //그 페이지에 보이는 상품id 가져와서
+  //localStorage에 watched 항목에 추가
+  useEffect(()=>{
+    let existingWatched = localStorage.getItem('watched');
+    if (!existingWatched) {
+      localStorage.setItem('watched', JSON.stringify([]));
+    }
+    let loadedWatchedItems = localStorage.getItem('watched');
+    if (loadedWatchedItems) {
+      setWatchedItems(JSON.parse(loadedWatchedItems));
+    }
+  }, [])
+
+
   
   return (
     <div className='App'>
@@ -46,6 +60,18 @@ function App() {
       <Routes>
         <Route path='/' element={<>
           <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
+          <div className='watched-item'>최근에 본 상품</div>
+          <div className='box'>
+            <ul>
+            <div className="recent-items-container">
+              {watchedImg.map((itemId, index) => (
+                <div key={index} className="recent-item">
+                  <img onClick={()=>{navigate(`/detail/${itemId.id}`)}} className="recent-item-img" src={itemId.image} style={{ width: '135px' }}/>
+                </div>
+              ))}
+            </div>
+            </ul>
+          </div>
         <ItemCard shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
