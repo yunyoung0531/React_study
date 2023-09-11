@@ -39,7 +39,7 @@ function App() {
     if (loadedWatchedItems) {
       setWatchedItems(JSON.parse(loadedWatchedItems));
     }
-  }, [])
+  }, []) 
 
 
   
@@ -56,8 +56,7 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
-      <Routes>
+      <Routes> 
         <Route path='/' element={<>
           <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
           <div className='watched-item'>최근에 본 상품</div>
@@ -67,6 +66,7 @@ function App() {
               {watchedImg.map((itemId, index) => (
                 <div key={index} className="recent-item">
                   <img onClick={()=>{navigate(`/detail/${itemId.id}`)}} className="recent-item-img" src={itemId.image} style={{ width: '135px' }}/>
+                  <div className="recent-item-title">{itemId.title}</div>
                 </div>
               ))}
             </div>

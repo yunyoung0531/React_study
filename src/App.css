@@ -124,6 +124,8 @@ button.order-btn :hover {
   max-width: 48%;
   box-sizing: border-box;
   padding: 10px;
+  align-items: center;
+  flex-direction: column;
 }
 
 .recent-items-container {
@@ -141,7 +143,7 @@ button.order-btn :hover {
 
 @media (min-width: 768px) {
   .recent-item {
-    flex-basis: 20%; /* 3개의 이미지를 한 줄에 표시 */
+    flex-basis: 20%; 
     max-width: 20%;
   }
 }
@@ -149,8 +151,14 @@ button.order-btn :hover {
 /* 데스크탑 뷰 */
 @media (min-width: 1024px) {
   .recent-item {
-    flex-basis: calc(100% / 7); /* 6개의 이미지를 한 줄에 표시 */
+    flex-basis: calc(100% / 7); /* 7개의 이미지를 한 줄에 표시 */
     max-width: calc(100% / 7);
     padding: 10px;
   }
+}
+
+.recent-item-title {
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: center;
 }
