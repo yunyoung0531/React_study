@@ -4,12 +4,18 @@ import { Button } from "react-bootstrap";
 import { changePlusCnt, changeMinusCnt, changeName } from "../store";
 import { changeAge } from "../store";
 import { removeToCart } from "../store/dataSlice";
+import { useState, memo } from "react";
+
+function func() {
+    return 
+}
 
 function Cart() {
 
     let state = useSelector((state)=>{ return state })
     console.log(state)
     let dispatch = useDispatch();
+    let [count, setCount] = useState(0);
 
     return (
         <>

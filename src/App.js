@@ -1,16 +1,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import data from './data.js';
 import ItemCard from './ItemCard';
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
-import Detail from './pages/Detail';
+// import Detail from './pages/Detail';
 import About from './pages/about';
 import Event from './pages/Event';
 import BackgroundImage from './images/HardBoiledSurfers.png';
 import axios from 'axios';
-import Cart from './pages/Cart';
+// import Cart from './pages/Cart';
+import { useQuery } from 'react-query';
+
+const Detail = lazy(() => import('./pages/Detail.js'));
+const Cart = lazy(() => import('./pages/Cart.js'));
 
 function App() {
   let [shoes, setShoes] = useState(data);
@@ -19,10 +23,6 @@ function App() {
   let [inventory, setInventory] = useState([10, 11, 12]);
   let navigate = useNavigate();
 
-  // let obj = {name : 'kim'}
-  // localStorage.setItem('data', JSON.stringify(obj));
-  // let 꺼냄 = localStorage.getItem('data');
-  // console.log(JSON.parse(꺼냄));
 
   let [watchedItems, setWatchedItems] = useState([]);
   let watchedItemImage = localStorage.getItem('watched');
@@ -41,8 +41,16 @@ function App() {
     }
   }, []) 
 
+  let result = useQuery(['userData'], ()=>{
+    return axios.get('https://codingapple1.github.io/userdata.json').then((a)=>{
+      console.log("요청됨");
+      return a.data;
+    });
+  },
+    { staleTime : 2000 }
+)
 
-  
+
   return (
     <div className='App'>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -55,7 +63,13 @@ function App() {
             <Nav.Link onClick={()=>{ navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
         </Container>
+        <Nav className='ms-auto user-name'>
+          안녕하세요.ㅤ 
+            { result.isLoading ? '로딩중' : result.data.name}님ㅤ
+          </Nav>
       </Navbar>
+
+      <Suspense fallback={<div>로딩중</div>}>
       <Routes> 
         <Route path='/' element={<>
           <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
@@ -100,7 +114,11 @@ function App() {
 
         {/* URL파라미터 */}
         <Route path='/detail' element={<Detail shoes={shoes}/>}/>
-        <Route path='/detail/:id' element={<Detail shoes={shoes}/>}/>
+        <Route path='/detail/:id' element={
+          <Suspense fallback={<div>로딩중</div>}>
+            <Detail shoes={shoes}/>
+          </Suspense>
+        }/>
 
         <Route path='/about' element={<About/>}>
           {/* Nested Routes */}
@@ -115,9 +133,13 @@ function App() {
         </Route>
         <Route path='*' element={<>404</>}/>
 
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart" element={
+          <Suspense fallback={<div>로딩중</div>}>
+            <Cart/>
+          </Suspense>
+        }/>
       </Routes>
-
+      </Suspense>
 
     </div>
   );

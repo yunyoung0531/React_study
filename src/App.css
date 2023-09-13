@@ -162,3 +162,7 @@ button.order-btn :hover {
   /* justify-content: center; */
   text-align: center;
 }
+
+.user-name {
+  color: #ffffff;
+}
