@@ -166,3 +166,8 @@ button.order-btn :hover {
 .user-name {
   color: #ffffff;
 }
+
+.App {
+  font-family: '210 옴니고딕OTF 035', sans-serif;
+  /* 폴백 폰트(sans-serif)도 지정해주는 것이 좋습니다. */
+}

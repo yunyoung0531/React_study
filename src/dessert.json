@@ -4,7 +4,7 @@
         "title" : "Banana waffle",
         "content" : "very sweet",
         "price" : 120000,
-        "image": "bananaWaffle.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/bananaWaffle.png?raw=true"
     },
     {
         "id" : 4,

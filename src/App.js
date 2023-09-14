@@ -12,6 +12,7 @@ import BackgroundImage from './images/HardBoiledSurfers.png';
 import axios from 'axios';
 // import Cart from './pages/Cart';
 import { useQuery } from 'react-query';
+import './assets/fonts/fonts.css';
 
 const Detail = lazy(() => import('./pages/Detail.js'));
 const Cart = lazy(() => import('./pages/Cart.js'));
@@ -93,7 +94,7 @@ function App() {
         <Button onClick={() => {
           //로딩중UI 띄우기
           setLoading(true);
-          axios.get(clickCnt == 0 ? 'https://codingapple1.github.io/shop/data2.json' : 'https://codingapple1.github.io/shop/data3.json')
+          axios.get(clickCnt == 0 ? 'https://codingapple1.github.io/shop/data2.json' : 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json')
           .then((result)=>{ 
             let copy = [...shoes, ...result.data];
             setShoes(copy);
