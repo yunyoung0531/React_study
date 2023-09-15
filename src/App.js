@@ -94,11 +94,11 @@ function App() {
         <Button onClick={() => {
           //로딩중UI 띄우기
           setLoading(true);
-          axios.get(clickCnt == 0 ? 'https://codingapple1.github.io/shop/data2.json' : 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json')
+          axios.get(clickCnt == 0 ? 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json' : 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json')
           .then((result)=>{ 
             let copy = [...shoes, ...result.data];
             setShoes(copy);
-            console.log("성공");
+            console.log("더보기 클릭!");
             //로딩중UI 숨기기
             setLoading(false);
             setClickCnt(clickCnt + 1);

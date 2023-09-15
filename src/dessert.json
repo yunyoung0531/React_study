@@ -11,69 +11,69 @@
         "title" : "Plain Waffle",
         "content" : "Born in Italia",
         "price" : 120000,
-        "image": "plainWaffle.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/plainWaffle.png?raw=true"
     },
     {
         "id" : 5,
         "title" : "Strawberry Waffle",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "strawberryWaffle.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/strawberryWaffle.png?raw=true"
     },
     {
         "id" : 6,
         "title" : "Strawberry Waffle",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "strawberryWaffle.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/strawberryWaffle.png?raw=true"
     },
     {
         "id" : 7,
         "title" : "Black Cake",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "blackCake.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/blackCake.png?raw=true"
     },
     {
         "id" : 8,
         "title" : "HBD Cake",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "HBDcake.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/HBDcake.png?raw=true"
     },
     {
         "id" : 9,
         "title" : "Oreo Cake",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "oreoCake.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/oreoCake.png?raw=true"
     },
     {
         "id" : 10,
         "title" : "Choco Donut",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "chocoDonut.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/chocoDonut.png?raw=true"
     },
     {
         "id" : 11,
         "title" : "Donut",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "donut.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/donut.png?raw=true"
     },
     {
         "id" : 12,
         "title" : "White Donut",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "whiteDonut.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/whiteDonut.png?raw=true"
     },
     {
         "id" : 13,
         "title" : "Strawberry Pie",
         "content" : "Born in France",
         "price" : 120000,
-        "image": "strawberryPie.png"
+        "image": "https://github.com/yunyoung0531/dessert.json/blob/master/strawberryPie.png?raw=true"
     }
 ]
