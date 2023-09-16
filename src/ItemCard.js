@@ -20,7 +20,7 @@ function ItemCard({shoes}) {
             </Link>
             <h5>{shoes[i].title}</h5>
                 <div className="price-button-container">
-                    <p className='menu-price'>{shoes[i].price}</p>
+                    <p className='menu-price'>{shoes[i].price}원</p>
                     {/* <div className='menu-more'><Button variant="outline-dark" className='btn-animation btn-bubble'>자세히보기</Button></div> */}
                     <Button variant="outline-dark" className='btn-animation2'>자세히보기</Button>
                 </div>

@@ -4,6 +4,8 @@ import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import './App.css';
 import data from './data.js';
 import ItemCard from './ItemCard';
+import ItemCard2 from './ItemCard2';
+import ItemCard3 from './ItemCard3';
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
 // import Detail from './pages/Detail';
 import About from './pages/about';
@@ -14,6 +16,7 @@ import axios from 'axios';
 // import Cart from './pages/Cart';
 import { useQuery } from 'react-query';
 import './assets/fonts/fonts.css';
+import breadlogo from './images/bread_logo.png';
 
 const Detail = lazy(() => import('./pages/Detail.js'));
 const Cart = lazy(() => import('./pages/Cart.js'));
@@ -66,7 +69,11 @@ const images = [
           <Nav className="me-auto nav-bar">
             <Nav.Link className='nav-marg' onClick={()=>{ navigate('/about')}}>About</Nav.Link>
             <Nav.Link className='nav-marg' onClick={()=>{ navigate('/event') }}>Event</Nav.Link>
-          <Navbar.Brand onClick={()=>{ navigate('/') }} className='logo-design'>빵굿</Navbar.Brand>
+            <Navbar.Brand onClick={()=>{ navigate('/') }} className='logo-design' >
+              <img src={breadlogo} alt="빵 로고" style={{ width: '70px', height: '40px', opacity: '0.7' }} />
+              <span className="logo-style" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontWeight: '800' }}>빵굿</span>
+            </Navbar.Brand>
+
             <Nav.Link className='nav-marg' onClick={()=>{ navigate('/detail/0') }}>Detail</Nav.Link>
             <Nav.Link className='nav-marg' onClick={()=>{ navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
@@ -109,8 +116,14 @@ const images = [
         <ItemCard shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
-        <h3 class="festival-title-scone">빵굿 마카롱</h3>
-        <ItemCard shoes={shoes}/>
+
+        <h3 class="festival-title-dacu">빵굿 다쿠아즈</h3>
+        <ItemCard3 shoes={shoes}/>
+        {loading && <Spinner animation="border" variant="dark" />}
+        <br/>
+
+        <h3 class="festival-title-scone">빵굿 오믈렛</h3>
+        <ItemCard2 shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 

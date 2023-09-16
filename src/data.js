@@ -37,59 +37,60 @@ let data = [
     },
     {
         id : 5,
-        title : "스콘",
+        title : "커스타드 오믈렛",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/scone.png")
+        price : 1500,
+        image: "https://dessert39.com/data/product/7YGs66Gc7Lm47IqI7Luk7Iqk7YOA65Oc7Jik66I66Cb_6rO17ZmI.png"
     },
     {
         id : 6,
-        title : "Black Cake",
+        title : "초코 오믈렛",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/blackCake.png")
+        price : 1500,
+        image: "https://dessert39.com/data/product/7LSI7L2U7Jik66I66Cb_6rO17ZmI.png"
     },
     {
         id : 7,
-        title : "HBD Cake",
+        title : "녹차 오믈렛",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/HBDcake.png")
+        price : 1500,
+        image: "https://dessert39.com/data/product/64W57LCo7Jik66I66Cb_6rO17ZmI.png"
     },
     {
         id : 8,
-        title : "Oreo Cake",
+        title : "우유크림 오믈렛",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/oreoCake.png")
+        price : 1500,
+        image: "https://dessert39.com/data/product/64E7LE66Gk7Jqw7Jyg7YGs66a87Jik66I66Cb_6rO17ZmI.png"
     },
     {
         id : 9,
-        title : "Choco Donut",
+        title : "초코 다쿠아즈",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/chocoDonut.png")
+        price : 3400,
+        image: "https://dessert39.com/data/product/7LCQ7LSI7L2U64uk7Lg7JWE7KaI_6rO17ZmI.png"
     },
     {
         id : 10,
-        title : "Donut",
+        title : "녹차 다쿠아즈",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/donut.png")
+        price : 3400,
+        image: "https://dessert39.com/data/product/7LCQ64W57LCo64uk7Lg7JWE7KaI_6rO17ZmI.png"
     },
     {
         id : 11,
-        title : "White Donut",
+        title : "황치즈 다쿠아즈",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/whiteDonut.png")
+        price : 3400,
+        
+        image: "https://dessert39.com/data/product/7LCQ7Zmp7LmY7KaI64uk7Lg7JWE7KaI_6rO17ZmI.png"
     },
     {
         id : 12,
-        title : "Strawberry Pie",
+        title : "앙버터 다쿠아즈",
         content : "Born in France",
-        price : 120000,
-        image: require("./images/strawberryPie.png")
+        price : 3400,
+        image: "https://dessert39.com/data/product/7JWZ67KE7YSw64uk7Lg7JWE7KaI_6rO17ZmI.png"
     }
 ];
 

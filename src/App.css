@@ -50,7 +50,7 @@
 
 .shoe-img {
   /* height: 140px; */
-    width: 110%;
+    width: 100%;
     height: auto;
     max-width: 170px;
     transition: transform 0.3s ease;
@@ -108,6 +108,7 @@
   padding-right: 80px;
   padding-left: 80px;
   margin: 10px 10px;
+  font-size: 22px;
 }
 
 .modal-cart {
@@ -290,6 +291,7 @@ span { position: relative; }
   margin-left: 50px;
   margin-right: 50px;
   margin: 10px 10px ;
+  font-size: 20px;
 }
 
 .navbar-color  {
@@ -422,9 +424,31 @@ span { position: relative; }
   position: absolute;
   top: 36px;       /* 위치를 약간 아래로 조절 */
   left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
-  width: 6%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
+  width: 5%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
   height: 19px;    /* 밑줄 두께 설정 */
   background: rgba(255, 226, 168, 0.5);
   z-index: -1; 
   transform: translateX(-50%); /* 가운데 정렬 유지 */
+}
+
+.festival-title-dacu {
+  position: relative;
+  padding-top: 20px; 
+  margin-left: -72%;
+}
+
+.festival-title-dacu::before {
+  content: "";
+  position: absolute;
+  top: 36px;       /* 위치를 약간 아래로 조절 */
+  left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
+  width: 7%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
+  height: 19px;    /* 밑줄 두께 설정 */
+  background: rgba(255, 226, 168, 0.5);
+  z-index: -1; 
+  transform: translateX(-50%); /* 가운데 정렬 유지 */
+}
+
+.logo-style {
+  font-weight: 900 !important;
 }
