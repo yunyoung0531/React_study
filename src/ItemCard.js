@@ -18,10 +18,11 @@ function ItemCard({shoes}) {
             <Link to={`/detail/${i}`}>
                 <img className='shoe-img' src={shoes[i].image}/>
             </Link>
-            <h4>{shoes[i].title}</h4>
+            <h5>{shoes[i].title}</h5>
                 <div className="price-button-container">
                     <p className='menu-price'>{shoes[i].price}</p>
-                    <div className='menu-more'><Button variant="outline-dark" className='btn-animation btn-bubble'>자세히보기</Button></div>
+                    {/* <div className='menu-more'><Button variant="outline-dark" className='btn-animation btn-bubble'>자세히보기</Button></div> */}
+                    <Button variant="outline-dark" className='btn-animation2'>자세히보기</Button>
                 </div>
             </div>
             </>

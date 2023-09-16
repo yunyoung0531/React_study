@@ -2,45 +2,45 @@ let data = [
 
     {
         id: 0,
-        title: "Strawberry Tart",
+        title: "플레인 스콘",
         content: "Born in France",
         price: 6500,
-        image: require("./images/strawberry.png")
+        image: "https://dessert39.com/data/product/7IaM7ZSE7Yq47ZSM66CI7J247Iqk7L2Y_6rO17ZmI.png"
     },
     {
         id: 1,
-        title: "Chocolate Cake",
+        title: "얼그레이 스콘",
         content: "Born in USA",
         price: 5500,
-        image: require("./images/chocolateCake.png")
+        image: "https://dessert39.com/data/product/7IaM7ZSE7Yq47Ja86re466CI7J207Iqk7L2Y_6rO17ZmI.png"
     },
     {
         id: 2,
-        title: "Basic Scone",
+        title: "고르곤졸라 스콘",
         content: "Born in Thailand",
         price: 4000,
-        image: require("./images/scone.png")
+        image: "https://dessert39.com/data/product/7IaM7ZSE7Yq46rOg66W06rOk7KG465287Iqk7L2Y_6rO17ZmI.png"
     },
     {
         id : 3,
-        title : "Banana waffle",
+        title : "바질 스콘",
         content : "very sweet",
-        price : 120000,
-        image: require("./images/bananaWaffle.png")
+        price : 4500,
+        image: "https://dessert39.com/data/product/7IaM7ZSE7Yq467CU7KeI7Iqk7L2Y_6rO17ZmI.png"
     },
     {
         id : 4,
-        title : "Plain Waffle",
+        title : "황치즈 쿠키 스콘",
         content : "Born in Italia",
-        price : 120000,
-        image: require("./images/plainWaffle.png")
+        price : 4500,
+        image: "https://dessert39.com/data/product/7Zmp7LmY7KaI7Lg7YKk7IqI_6rO17ZmI.png"
     },
     {
         id : 5,
-        title : "Strawberry Waffle",
+        title : "스콘",
         content : "Born in France",
         price : 120000,
-        image: require("./images/strawberryWaffle.png")
+        image: require("./images/scone.png")
     },
     {
         id : 6,

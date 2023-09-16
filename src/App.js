@@ -1,14 +1,15 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
+import './App.css';
 import data from './data.js';
 import ItemCard from './ItemCard';
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
 // import Detail from './pages/Detail';
 import About from './pages/about';
 import Event from './pages/Event';
-import BackgroundImage from './images/HardBoiledSurfers.png';
+import BackgroundImage from './images/디저트39치즈.jpg';
+import BackgroundImage2 from './images/디저트39치즈2.jpg';
 import axios from 'axios';
 // import Cart from './pages/Cart';
 import { useQuery } from 'react-query';
@@ -51,30 +52,37 @@ function App() {
     { staleTime : 2000 }
 )
 
+const images = [
+  'https://dessert39.com/html/assets/img/menu/banner/Dbanner_15.png',
+  'https://dessert39.com/html/assets/img/menu/banner/Dbanner_13.png',
+  BackgroundImage,
+  BackgroundImage2
+];
 
   return (
     <div className='App'>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="light" data-bs-theme="light" className='navbar-color'>
         <Container>
-          <Navbar.Brand onClick={()=>{ navigate('/') }} className='logo-design'>Dessert</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link onClick={()=>{ navigate('/about')}}>About</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/event') }}>Event</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/detail/0') }}>Detail</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/cart') }}>Cart</Nav.Link>
+          <Nav className="me-auto nav-bar">
+            <Nav.Link className='nav-marg' onClick={()=>{ navigate('/about')}}>About</Nav.Link>
+            <Nav.Link className='nav-marg' onClick={()=>{ navigate('/event') }}>Event</Nav.Link>
+          <Navbar.Brand onClick={()=>{ navigate('/') }} className='logo-design'>빵굿</Navbar.Brand>
+            <Nav.Link className='nav-marg' onClick={()=>{ navigate('/detail/0') }}>Detail</Nav.Link>
+            <Nav.Link className='nav-marg' onClick={()=>{ navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
         </Container>
-        <Nav className='ms-auto user-name'>
+        {/* <Nav className='ms-auto user-name'>
           안녕하세요.ㅤ 
             { result.isLoading ? '로딩중' : result.data.name}님ㅤ
-          </Nav>
+          </Nav> */}
       </Navbar>
 
       <Suspense fallback={<div>로딩중</div>}>
       <Routes> 
         <Route path='/' element={<>
-          <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
-          <div className='watched-item'>최근에 본 상품</div>
+          {/* <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} /> */}
+
+          {/* <div className='watched-item'>최근에 본 상품</div>
           <div className='box'>
             <ul>
             <div className="recent-items-container">
@@ -86,12 +94,28 @@ function App() {
               ))}
             </div>
             </ul>
-          </div>
+          </div> */}
+        
+        <h2 class="festival-title">빵굿 치즈 페스티벌</h2>
+        <div className='container'>
+          <ul className='row'>
+            {images.map((image, index) => (
+                <div key={index} className='festival-item ' style={{ backgroundImage: `url(${image})` }}></div>
+            ))}
+          </ul>
+        </div>
+
+        <h3 class="festival-title-scone">빵굿 스콘</h3>
         <ItemCard shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
+        <h3 class="festival-title-scone">빵굿 마카롱</h3>
+        <ItemCard shoes={shoes}/>
+        {loading && <Spinner animation="border" variant="dark" />}
+        <br/>
+
         {(clickCnt == 0 || clickCnt == 1) ? 
-        <Button onClick={() => {
+        <Button variant="outline-dark" onClick={() => {
           //로딩중UI 띄우기
           setLoading(true);
           axios.get(clickCnt == 0 ? 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json' : 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json')

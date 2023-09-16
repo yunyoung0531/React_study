@@ -50,7 +50,7 @@
 
 .shoe-img {
   /* height: 140px; */
-    width: 100%;
+    width: 110%;
     height: auto;
     max-width: 170px;
     transition: transform 0.3s ease;
@@ -104,6 +104,10 @@
 
 .logo-design {
   cursor: pointer;
+  margin-left: 100px;
+  padding-right: 80px;
+  padding-left: 80px;
+  margin: 10px 10px;
 }
 
 .modal-cart {
@@ -143,7 +147,8 @@ button.order-btn :hover {
 }
 
 .card-box {
-  margin : 20px; 
+  width: calc(240px);
+  margin : 10px; 
   padding : 50px;
   border : 1px solid rgb(182, 182, 182);
   border-radius : 5px;
@@ -234,9 +239,15 @@ button.order-btn :hover {
   transition: color 0.3s;
   z-index: 1; 
   border-radius: 30px !important;
-  padding: 100px;
+
 }
 
+.btn-bubble {
+  width: 50px;     
+  height: 10px;     
+  display: inline-block;
+  line-height: 40px;    
+}
 .btn-animation:hover {
   color: #ffffff !important;
 }
@@ -269,3 +280,151 @@ span { position: relative; }
 	100% { transform: translate(-50%) rotate(360deg); } 
 } 
 
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-marg {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin: 10px 10px ;
+}
+
+.navbar-color  {
+  /* margin: 10px 0;
+  background-color: #bb3232 !important; */
+}
+
+
+.btn-animation2 {
+  position: relative;
+  background: white; 
+  color: black; 
+  overflow: hidden;
+  transition: color 0.3s;
+  z-index: 1; 
+  border-radius: 30px !important;
+  
+
+}
+.btn-animation2:hover {
+  color: #ffffff !important;
+}
+
+.btn-animation2.btn-outline-dark:hover {
+  background-color: transparent;  /* 배경색을 투명하게 설정 */
+  border-color: #1c1c1c;          /* 테두리 색상을 원래대로 유지 */
+  color: #1c1c1c;                 /* 텍스트 색상을 원래대로 유지 */
+}
+
+.btn-animation2:before { 
+  content: "";
+  position: absolute; 
+  width: 300px; 
+  height: 300px; 
+  border-radius: 100px; 
+  background-color: #000000; 
+  top: 200%; 
+  left: 50%; 
+  z-index: -1; 
+  transform: translate(-50%); animation: wave 7s infinite linear; transition: all 1s; 
+}
+
+.btn-animation2:hover:before { top: -50%; } 
+
+span { position: relative; }
+
+@keyframes wave {
+	0% { transform: translate(-50%) rotate(-180deg); }
+	100% { transform: translate(-50%) rotate(360deg); } 
+} 
+
+/* .festival-title {
+  position: relative;
+  padding-top: 90px; 
+  margin-left: -70%;
+}
+
+.festival-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px; 
+  background: rgba(211, 211, 211, 0.5);
+  z-index: -1; 
+} */
+
+.festival-title {
+  position: relative;
+  padding-top: 110px; 
+  margin-left: -64%;
+}
+
+.festival-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 130px; 
+  background: rgba(255, 226, 168, 0.5);
+  z-index: -1; 
+}
+
+/* 화면 크기가 768px 미만일 때의 스타일 */
+@media (max-width: 768px) {
+  .festival-title {
+    font-size: 18px;  /* 글씨 크기를 줄입니다. */
+    padding-top: 70px;  /* 패딩 값을 줄입니다. */
+    margin-left: 1px;
+
+  }
+
+  .festival-title::before {
+    height: 100px;  /* 회색 배경의 높이를 줄입니다. */
+  }
+}
+
+/* 화면 크기가 480px 미만일 때의 스타일 */
+@media (max-width: 480px) {
+  .festival-title {
+    font-size: 23px;  /* 더 작은 글씨 크기로 조절합니다. */
+    padding-top: 50px;  /* 패딩 값을 더 줄입니다. */
+    margin-left: 1px;
+  }
+
+  .festival-title::before {
+    height: 80px;  /* 회색 배경의 높이를 더 줄입니다. */
+  }
+}
+
+.festival-item {
+  width: 300px;  
+  height: 350px; 
+  background-size: cover; 
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.festival-title-scone {
+  position: relative;
+  padding-top: 20px; 
+  margin-left: -74%;
+}
+
+.festival-title-scone::before {
+  content: "";
+  position: absolute;
+  top: 36px;       /* 위치를 약간 아래로 조절 */
+  left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
+  width: 6%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
+  height: 19px;    /* 밑줄 두께 설정 */
+  background: rgba(255, 226, 168, 0.5);
+  z-index: -1; 
+  transform: translateX(-50%); /* 가운데 정렬 유지 */
+}
