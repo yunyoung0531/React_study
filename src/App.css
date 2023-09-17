@@ -431,6 +431,24 @@ span { position: relative; }
   transform: translateX(-50%); /* 가운데 정렬 유지 */
 }
 
+.festival-title-oml {
+  position: relative;
+  padding-top: 20px; 
+  margin-left: -74%;
+}
+
+.festival-title-oml::before {
+  content: "";
+  position: absolute;
+  top: 36px;       /* 위치를 약간 아래로 조절 */
+  left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
+  width: 6%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
+  height: 19px;    /* 밑줄 두께 설정 */
+  background: rgba(255, 226, 168, 0.5);
+  z-index: -1; 
+  transform: translateX(-50%); /* 가운데 정렬 유지 */
+}
+
 .festival-title-dacu {
   position: relative;
   padding-top: 20px; 

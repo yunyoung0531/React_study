@@ -5,9 +5,9 @@ import './App.css';
 import  'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
-function ItemCard3({shoes}) {
+function ItemCard4({shoes}) {
     // let displayItems = data.filter(item => item.id === 5 || item.id === 6 || item.id === 7);
-    let displayDessert = shoes.slice(9, 13);
+    let displayDessert = shoes.slice(12, 18);
 
 
     return(
@@ -37,4 +37,4 @@ function ItemCard3({shoes}) {
     )
 }
 
-export default ItemCard3;
+export default ItemCard4;

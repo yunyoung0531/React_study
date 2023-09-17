@@ -6,6 +6,7 @@ import data from './data.js';
 import ItemCard from './ItemCard';
 import ItemCard2 from './ItemCard2';
 import ItemCard3 from './ItemCard3';
+import ItemCard4 from './ItemCard4';
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
 // import Detail from './pages/Detail';
 import About from './pages/about';
@@ -122,8 +123,13 @@ const images = [
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
-        <h3 class="festival-title-scone">빵굿 오믈렛</h3>
+        <h3 class="festival-title-oml">빵굿 오믈렛</h3>
         <ItemCard2 shoes={shoes}/>
+        {loading && <Spinner animation="border" variant="dark" />}
+        <br/>
+
+        <h3 class="festival-title-oml">빵굿 도쿄롤</h3>
+        <ItemCard4 shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
