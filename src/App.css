@@ -207,9 +207,17 @@ button.order-btn :hover {
   color: #ffffff;
 }
 
-.App {
-  font-family: '210 옴니고딕OTF 035', sans-serif;
-  /* 폴백 폰트(sans-serif)도 지정해주는 것이 좋습니다. */
+.App  {
+  font-family: '210 옴니고딕OTF 035', sans-serif !important;
+}
+
+.modal-content {
+  font-family: '210 옴니고딕OTF 035', sans-serif !important;
+  height: 620px;
+}
+
+.modal-dialog {
+  max-width: 33%;
 }
 
 .menu-price {
@@ -469,4 +477,17 @@ span { position: relative; }
 
 .logo-style {
   font-weight: 900 !important;
+}
+
+.modal-style {
+  margin-top: 10%;
+}
+
+.modal-detail-img {
+  margin: -30px !important;
+  padding: -30px !important;
+}
+
+.modal-detail-title {
+  margin: 40px;
 }
