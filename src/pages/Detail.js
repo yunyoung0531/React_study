@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { changePlusCnt } from '../store';
 import { Button, Modal } from 'react-bootstrap';
 import Cart from './Cart';
+import { Link } from 'react-router-dom';
 
 function Detail(props) {
     let [count, setCount] = useState(0);
@@ -89,26 +90,26 @@ function Detail(props) {
         <>
         <div className={'start ' + fade}>
         <div className="container">
-        {alert == 1 ? 
+        {/* {alert == 1 ? 
         (<div className='alert alert-warning'>
             2초 이내 구매시 할인!
         </div>) : null}
             {count}
-        <button onClick={()=>{ setCount(count + 1); setAlert(1) }}>버튼</button>
+        <button onClick={()=>{ setCount(count + 1); setAlert(1) }}>버튼</button> */}
         <div className="row detail-item">
             <div className="col-md-6 detail-img">
             <img src={props.shoes[id].image} width="50%" />
             </div>
             <div className="col-md-6">
             <h4 className="pt-5">{props.shoes[id].title}</h4>
-            <input
+            {/* <input
                 type='text'
                 value={input}
                 onChange={handleInputChange}
             />
-            <button onClick={() => {setInput(1)}}>클릭</button>
+            <button onClick={() => {setInput(1)}}>클릭</button> */}
             <p>{props.shoes[id].content}</p>
-            <p>{props.shoes[id].price}원</p>
+            <h5>{props.shoes[id].price}원</h5>
             <button className="btn order-btn" onClick={()=>{
                 handleShow();
                 let isItemInCart = cart.some(item => item.id === selectedItem.id);
@@ -143,13 +144,13 @@ function Detail(props) {
 
         <Nav variant="tabs"  defaultActiveKey="link0">
             <Nav.Item>
-            <Nav.Link eventKey="link0" onClick={() => setTab(0)}>버튼0</Nav.Link>
+            <Nav.Link eventKey="link0" onClick={() => setTab(0)} className='tab0 tab-color'>치즈 페스티벌</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-            <Nav.Link eventKey="link1" onClick={() => setTab(1)}>버튼1</Nav.Link>
+            <Nav.Link eventKey="link1" onClick={() => setTab(1)} className='tab1 tab-color'>한정판매 - 곰돌이 텀블러</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-            <Nav.Link eventKey="link2" onClick={() => setTab(2)}>버튼2</Nav.Link>
+            <Nav.Link eventKey="link2" onClick={() => setTab(2)} className='tab2 tab-color'>신메뉴 - 도넛</Nav.Link>
             </Nav.Item>
         </Nav>
         <TabContent shoes={props.shoes} tab={tab}/>
@@ -160,6 +161,11 @@ function Detail(props) {
 
 function TabContent(props) {
     let [fade, setFade] = useState('');
+    let targetIds0 = [4, 11, 18, 19];
+    let displayDessert0 = props.shoes.filter(shoe => targetIds0.includes(shoe.id));
+    let targetIds1 = [20, 21];
+    let displayDessert1 = props.shoes.filter(shoe => targetIds1.includes(shoe.id));
+
     useEffect(()=>{
         setTimeout(()=>{setFade('end')}, 100)
         return () => {
@@ -168,9 +174,35 @@ function TabContent(props) {
     }, [props.tab])
 
     if (props.tab == 0) {
-        return <div className={'start ' + fade}>내용0 </div>
+        return <div className={'start ' + fade}>
+                <div className="container">
+                    <div className="row centered-row">
+                    {displayDessert0.map((a, i) => (
+                        <div className="col-md-2 row-items card-box-tab recent-items-container justify-content-center"  key={i}>
+                            <Link to={`/detail/${a.id}`}>
+                                <img className='shoe-img-tab' src={a.image} />
+                            </Link>
+                            <h6>{a.title}</h6>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+            </div>
     } else if (props.tab == 1) {
-        return <div className={'start ' + fade}>내용1</div>
+        return <div className={'start ' + fade}>
+                <div className="container">
+                    <div className="row centered-row">
+                    {displayDessert1.map((a, i) => (
+                        <div className="col-md-2 row-items card-box-tab recent-items-container justify-content-center"  key={i}>
+                            <Link to={`/detail/${a.id}`}>
+                                <img className='shoe-img-tab' src={a.image} />
+                            </Link>
+                            <h6>{a.title}</h6>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+            </div>
     } else if (props.tab == 2){
         return <div className={'start ' + fade}>내용2</div>
     }

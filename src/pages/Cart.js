@@ -19,10 +19,11 @@ function Cart() {
 
     return (
         <>
-        <h6>{state.user.name}({state.user.age})의 장바구니
-        <Button onClick={()=>{
-            return dispatch(changeAge(100))
-        }}>버튼</Button> </h6>
+        {/* <h6>{state.user.name}({state.user.age})의 장바구니 */}
+            {/* <Button onClick={()=>{
+                return dispatch(changeAge(100))
+            }}>버튼</Button> */}
+        {/* </h6> */}
         <Table>
             <thead>
                 <tr>
@@ -41,13 +42,13 @@ function Cart() {
                                 <td>{ state.data[i].id }</td>
                                 <td>{ state.data[i].name }</td>
                                 <td>{ state.data[i].count }</td>
-                                <td><Button onClick={()=>{
+                                <td><Button variant='outline-dark' onClick={()=>{
                                     dispatch(changeMinusCnt(state.data[i].id));
                                     }}>-</Button>
-                                    <Button onClick={()=>{
+                                    <Button variant='outline-dark' onClick={()=>{
                                     dispatch(changePlusCnt(state.data[i].id));
                                     }}>+</Button></td>
-                                <td><Button onClick={()=>{
+                                <td><Button variant='outline-dark' onClick={()=>{
                                     dispatch(removeToCart(state.data[i].id));
                                 }}>삭제</Button></td>
                             </tr>

@@ -4,8 +4,8 @@ let data = createSlice({
     name: 'data',
     initialState:
     [
-        {id : 1, name : 'Chocolate Cake', count : 2},
-        {id : 2, name : 'Basic Scone', count : 1}
+        // {id : 1, name : 'Chocolate Cake', count : 2},
+        // {id : 2, name : 'Basic Scone', count : 1}
     ],
     reducers : {
         changePlusCnt(state, action) {

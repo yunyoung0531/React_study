@@ -43,9 +43,9 @@ function ItemCard({shoes}) {
             <div className="row ">
             {displayDessert.map((a, i) => (
                 <div className="col-md-2 row-items card-box recent-items-container"  key={i}>
-                    <Link to={`/detail/${i}`}>
+                    {/* <Link to={`/detail/${i}`}> */}
                         <img className='shoe-img' src={shoes[i].image} alt="Shoe Image" />
-                    </Link>
+                    {/* </Link> */}
                     <h5>{shoes[i].title}</h5>
                     <div className="price-button-container">
                         <p className='menu-price'>{shoes[i].price}원</p>

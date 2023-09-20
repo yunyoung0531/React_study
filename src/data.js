@@ -124,10 +124,45 @@ let data = [
     {
         id : 17,
         title : "자색 고구마 도쿄롤",
-        content : "Born in France",
+        content : "촉촉한 시트 속을 가득 채운 고구마 우유크림은 담백하고 고급스러운 단맛과 함께 최상의 부드러움을 전달합니다. 먹음직스러운 자색빛 시트 속 알알이 박혀있는 리얼 고구마의 달콤한 식감을 지금 바로 느껴보세요.",
         price : 3400,
         image: "https://dessert39.com/data/product/7J6Q7IOJ6rOg6rWs66eI64E7LE66GkS_6rO17ZmI.png"
-    }
+    },
+    {
+        id : 18,
+        title : "황치즈 바스크 케이크",
+        content : "크림치즈와 황치즈가 만나 치즈의 더 깊고 진한 맛이 일품인 부드러운 바스크 치즈 케익입니다.",
+        price : 4800,
+        image: "https://dessert39.com/data/product/7Zmp7LmY7KaI67CU7Iqk7YGs7KGw6rCB7LyA7J21_6rO17ZmI.png"
+    },
+    {
+        id : 19,
+        title : "황치즈 케이크",
+        content : "단짠단짠의 진한 황치즈 크림으로 만든 케익",
+        price : 6800,
+        image: "https://dessert39.com/data/product/1687847854_064_7Zmp7LmY7KaI7LyA7J21_6rO17ZmI.png"
+    },
+    {
+        id : 20,
+        title : "서있곰 텀블러",
+        content : "소장 욕구 일으키는 깜찍한 서있곰 텀블러",
+        price : 3000,
+        image: "https://dessert39.com/data/product/1685930679_7127_7ISc7J6I6rOw7YWA67iU65s.png"
+    },
+    {
+        id : 21,
+        title : "앉아있곰 텀블러",
+        content : "소장 욕구 일으키는 인기만점 앉아있곰 텀블러",
+        price : 3000,
+        image: "https://dessert39.com/data/product/1685930654_077_7JWJ7JWE7J6I6rOw7YWA67iU65s.png"
+    },
+    {
+        id : 22,
+        title : "황치즈 케이크",
+        content : "단짠단짠의 진한 황치즈 크림으로 만든 케익",
+        price : 6800,
+        image: "https://dessert39.com/data/product/1687847854_064_7Zmp7LmY7KaI7LyA7J21_6rO17ZmI.png"
+    },
 ];
 
 export default data;

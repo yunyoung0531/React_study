@@ -113,7 +113,7 @@ const images = [
           </ul>
         </div>
 
-        <h3 class="festival-title-scone">빵굿 스콘</h3>
+        <h3 class="festival-title-scone">빵굿 신메뉴 스콘</h3>
         <ItemCard shoes={shoes}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
