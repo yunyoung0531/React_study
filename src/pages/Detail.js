@@ -204,7 +204,7 @@ function TabContent(props) {
                 </div>
             </div>
     } else if (props.tab == 2){
-        return <div className={'start ' + fade}>내용2</div>
+        return <div className={'start ' + fade}>준비중입니다.</div>
     }
 }
 

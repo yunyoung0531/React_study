@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import {Button, Container, Nav, Navbar, Spinner} from 'react-bootstrap';
 import './App.css';
 import data from './data.js';
+import eventdata from './eventdata.js';
 import ItemCard from './ItemCard';
 import ItemCard2 from './ItemCard2';
 import ItemCard3 from './ItemCard3';
@@ -24,6 +25,7 @@ const Cart = lazy(() => import('./pages/Cart.js'));
 
 function App() {
   let [shoes, setShoes] = useState(data);
+  let [event, setEvent] = useState(eventdata);
   let [clickCnt, setClickCnt] = useState(0);
   let [loading, setLoading] = useState(false);
   let [inventory, setInventory] = useState([10, 11, 12]);
@@ -169,7 +171,7 @@ const images = [
           <Route path='member' element={<>멤버</>}/>
           <Route path='location' element={<>위치</>}/>
         </Route>
-        <Route path='/event' element={<Event/>}>
+        <Route path='/event' element={<Event event={event}/>}>
           {/* Nested Routes */}
           <Route path='one' element={<p>첫 주문시 양배추즙 서비스</p>}/>
           <Route path='two' element={<p>생일 기념 쿠폰</p>}/>
