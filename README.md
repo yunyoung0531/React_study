@@ -3,16 +3,22 @@
 ## 🔍소개 & 주요 기능
 
 <img src="https://github.com/yunyoung0531/bbang-good/assets/68066598/7cd7989b-5c2f-4de0-9c37-343560a97890.png"  width="600" height="300"/>
+
+
 *디저트가게 빵굿 메인화면*
+
 
 <img src="https://github.com/yunyoung0531/bbang-good/assets/68066598/f756bfab-5f78-4f14-b116-31d5a523694d.png"  width="600" height="300"/>
 *메뉴소개*
 
+
 <img src="https://github.com/yunyoung0531/bbang-good/assets/68066598/1e745e64-495b-4cec-9cdf-bc7b92599369.png"  width="600" height="300"/>
 *이벤트&소식*
 
+
 <img src="https://github.com/yunyoung0531/bbang-good/assets/68066598/d0e9f531-6d76-46b7-b84e-46888b29c064.png"  width="600" height="300"/>
 *자세히보기 버튼 클릭 - > 간단한 메뉴 소개 및 가격*
+
 
 <img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/aea8dba4-1473-45b0-adb0-35b4741b3838.png"  width="400" height="200"/>
 *메뉴 디테일 페이지 하단 탭 -> 이벤트 메뉴, 시즌 메뉴 등 소개*
