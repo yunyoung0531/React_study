@@ -110,7 +110,7 @@ function Detail(props) {
             <button onClick={() => {setInput(1)}}>클릭</button> */}
             <p>{props.shoes[id].content}</p>
             <h5>{props.shoes[id].price}원</h5>
-            <button className="btn order-btn" onClick={()=>{
+            <Button variant="outline-light" className="goToCartBtn" onClick={()=>{
                 handleShow();
                 let isItemInCart = cart.some(item => item.id === selectedItem.id);
                 if (!isItemInCart) {
@@ -122,7 +122,7 @@ function Detail(props) {
                 } else {
                     dispatch(changePlusCnt(selectedItem.id));
                 }
-            }}>주문하기</button> 
+            }}>주문하기</Button> 
             </div>
         </div>
         </div>
@@ -133,10 +133,10 @@ function Detail(props) {
         </Modal.Header>
         <Modal.Body>장바구니에 담았어요 !</Modal.Body>
         <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="outline-light" onClick={handleClose} className='goToCartBtn'>
                 쇼핑 계속 하기
             </Button>
-            <Button variant="light" onClick={()=>{navigate('/cart')}} className='goToCartBtn'>
+            <Button variant="outline-light" onClick={()=>{navigate('/cart')}} className='goToCartBtn'>
                 장바구니로 이동
             </Button>
         </Modal.Footer>

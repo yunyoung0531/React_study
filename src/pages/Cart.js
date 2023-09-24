@@ -42,13 +42,13 @@ function Cart() {
                                 <td>{ state.data[i].id }</td>
                                 <td>{ state.data[i].name }</td>
                                 <td>{ state.data[i].count }</td>
-                                <td><Button variant='outline-dark' onClick={()=>{
+                                <td><Button variant='outline-light' className='goToCartBtn' onClick={()=>{
                                     dispatch(changeMinusCnt(state.data[i].id));
                                     }}>-</Button>
-                                    <Button variant='outline-dark' onClick={()=>{
+                                    <Button variant='outline-light' className='goToCartBtn' onClick={()=>{
                                     dispatch(changePlusCnt(state.data[i].id));
                                     }}>+</Button></td>
-                                <td><Button variant='outline-dark' onClick={()=>{
+                                <td><Button variant='outline-light' className='goToCartBtn' onClick={()=>{
                                     dispatch(removeToCart(state.data[i].id));
                                 }}>삭제</Button></td>
                             </tr>

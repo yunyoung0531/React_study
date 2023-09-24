@@ -122,21 +122,18 @@
 }
 
 .modal-cart {
-  margin-top: 15%;
+  margin-top: 13% !important;
+  margin: 10px ;
 }
+
 
 Button.goToCartBtn {
-  background-color: #6E9FED; 
-  color: white;
-}
-
-button.order-btn {
   background-color: rgba(255, 207, 110, 0.5);
-  /* rgba(255, 226, 168, 0.5); */
+  color: black;
 }
-
-button.order-btn :hover {
-  background-color: rgba(255, 221, 154, 0.5);
+Button.goToCartBtn:hover {
+  background-color: rgba(255, 176, 17, 0.5);
+  color: black;
 }
 
 .watched-item {
@@ -244,9 +241,17 @@ button.order-btn :hover {
   font-family: '210 옴니고딕OTF 035', sans-serif !important;
 }
 
-.modal-content {
+/* .modal-content-o {
+  height: 620px;
+} */
+
+.modal-shoe-detail .modal-content  {
   font-family: '210 옴니고딕OTF 035', sans-serif !important;
   height: 620px;
+}
+
+.modal-content {
+  font-family: '210 옴니고딕OTF 035', sans-serif !important;
 }
 
 .modal-dialog {

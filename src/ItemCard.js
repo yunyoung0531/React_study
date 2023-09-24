@@ -22,11 +22,11 @@ function ItemCard({shoes}) {
 
     return (
         <>
-        <Modal show={showModal} onHide={handleClose} centered>
+        <Modal show={showModal} onHide={handleClose} centered className='modal-shoe-detail'>
             <Modal.Header closeButton>
                 <Modal.Title></Modal.Title>
             </Modal.Header>
-            <Modal.Body className="d-flex flex-column align-items-center justify-content-center">
+            <Modal.Body className="d-flex flex-column align-items-center justify-content-center ">
                 <img src={selectedShoe?.image} width="50%" className='modal-detail-img' />
                 <h3>{selectedShoe?.title}</h3>
                 <p className=''>{selectedShoe?.content}</p> 
