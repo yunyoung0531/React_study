@@ -58,10 +58,9 @@
 ## 💫기술 스택
 
 - React
-- Bootstrap
+- React Bootstrap
 - Redux
 - react-router-dom
-- AJAX
 - Axios
 
 
