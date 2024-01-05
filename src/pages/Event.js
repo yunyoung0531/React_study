@@ -16,8 +16,8 @@ function Event({event}) {
             <div className='row'>
                 {displayEvent.map((a, i) => (
                     <div className="col-md-3" key={i}>
-                        <Card style={{ width: '18rem' }} className='event-card'>
-                            <Card.Img variant="top" src={a.image} /> {/* Use the current image from the map function */}
+                        <Card style={{ width: '17rem' }} className='event-card'>
+                            <Card.Img variant="top" src={a.image} />
                             <Card.Body>
                                 <Card.Title>{a.title}</Card.Title>
                                 <Card.Text>
