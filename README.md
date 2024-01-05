@@ -48,7 +48,7 @@
 **수량 확인 및 수량 변경하기 버튼**
 
 <img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/02c9a445-87d2-45ea-9f4b-d5107b517bdb.png"  width="250" height="150"/>
-<img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/2dda1b89-ac54-431d-8b81-40442e69c90e.png"  width="550" height="100"/>
+<img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/2dda1b89-ac54-431d-8b81-40442e69c90e.png"  width="600" height="100"/>
 
 
 **삭제하기**
