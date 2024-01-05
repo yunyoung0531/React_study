@@ -51,8 +51,11 @@
 <img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/2dda1b89-ac54-431d-8b81-40442e69c90e.png"  width="550" height="150"/>
 
 
-**삭제하기기**
+**삭제하기**
 
+
+## 페이지 주소
+https://bbang-good.netlify.app/
 
 
 ## 💫기술 스택
