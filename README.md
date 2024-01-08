@@ -58,6 +58,7 @@
 https://bbang-good.netlify.app/
 
 
+https://bbang-goood.vercel.app/
 
 
 ## 💫기술 스택
