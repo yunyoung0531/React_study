@@ -409,8 +409,12 @@ span { position: relative; }
 .festival-title {
   position: relative;
   padding-top: 110px; 
-  margin-left: -64%;
+  margin-left: -62%;
+  /* left: 0; */
+  /* text-align: left; */
+  /* margin-left: 50%; */
 }
+
 
 .festival-title::before {
   content: "";
@@ -426,9 +430,9 @@ span { position: relative; }
 /* 화면 크기가 768px 미만일 때의 스타일 */
 @media (max-width: 768px) {
   .festival-title {
-    font-size: 18px;  /* 글씨 크기를 줄입니다. */
+    font-size: 26px;  /* 글씨 크기를 줄입니다. */
     padding-top: 70px;  /* 패딩 값을 줄입니다. */
-    margin-left: 1px;
+    /* margin-left: -35%; */
 
   }
 
@@ -442,7 +446,7 @@ span { position: relative; }
   .festival-title {
     font-size: 23px;  /* 더 작은 글씨 크기로 조절합니다. */
     padding-top: 50px;  /* 패딩 값을 더 줄입니다. */
-    margin-left: 1px;
+    /* margin-left: -30%; */
   }
 
   .festival-title::before {
@@ -548,10 +552,35 @@ span { position: relative; }
 }
 .event-card {
   margin: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
+  /* max-width: 17rem; */
+  /* max-height: 60rem; */
 }
 .event-card:hover {
   box-shadow: 0 7px 13px rgba(0, 0, 0, 0.1), 0 9px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 화면 크기가 768px 미만일 때의 스타일 */
+@media (max-width: 1080px) {
+  .event-card{
+    margin: 30px;
+    margin-bottom: 100px;
+    max-width: 15rem;
+    max-height: 30rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 587px) {
+  .event-card {
+    margin: 15px;
+    margin-bottom: 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    max-width: 20rem;
+    max-height: 40rem;
+  }
 }
