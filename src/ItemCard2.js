@@ -1,23 +1,20 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import data from './data.js';
 import './App.css';
 import  'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-function ItemCard2({shoes}) {
-    // let displayItems = data.filter(item => item.id === 5 || item.id === 6 || item.id === 7);
-    let displayDessert = shoes.slice(5, 9);
+function ItemCard2({items}) {
+    let displayDessert = items.slice(5, 9);
     const [showModal, setShowModal] = useState(false);
-    const [selectedShoe, setSelectedShoe] = useState(null); 
+    const [selectedItem, setSelectedItem] = useState(null); 
     let navigate = useNavigate();
 
     const handleClose = () => {
         setShowModal(false);
     };
-    const handleShow = (shoe) => {
-        setSelectedShoe(shoe);
+    const handleShow = (item) => {
+        setSelectedItem(item);
         setShowModal(true);
     }
 
@@ -29,14 +26,14 @@ function ItemCard2({shoes}) {
                 <Modal.Title></Modal.Title>
             </Modal.Header>
             <Modal.Body className="d-flex flex-column align-items-center justify-content-center modal-content-o">
-                <img src={selectedShoe?.image} width="60%" className='modal-detail-img' />
-                <h3 className='modal-detail-title'>{selectedShoe?.title}</h3>
-                <p className=''>{selectedShoe?.content}</p> 
-                <h5 className='price-style'>가격: {selectedShoe?.price}원</h5>
+                <img src={selectedItem?.image} width="60%" className='modal-detail-img' />
+                <h3 className='modal-detail-title'>{selectedItem?.title}</h3>
+                <p className=''>{selectedItem?.content}</p> 
+                <h5 className='price-style'>가격: {selectedItem?.price}원</h5>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-dark" onClick={handleClose}>닫기</Button>
-                <Button variant="outline-dark" onClick={()=>navigate(`/detail/${selectedShoe?.id}`)}>더 자세히보기</Button>
+                <Button variant="outline-dark" onClick={()=>navigate(`/detail/${selectedItem?.id}`)}>더 자세히보기</Button>
             </Modal.Footer>
         </Modal>
 

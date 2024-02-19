@@ -8,14 +8,12 @@ import ItemCard from './ItemCard';
 import ItemCard2 from './ItemCard2';
 import ItemCard3 from './ItemCard3';
 import ItemCard4 from './ItemCard4';
-import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom';
-// import Detail from './pages/Detail';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import About from './pages/about';
 import Event from './pages/Event';
 import BackgroundImage from './images/디저트39치즈.jpg';
 import BackgroundImage2 from './images/디저트39치즈2.jpg';
 import axios from 'axios';
-// import Cart from './pages/Cart';
 import { useQuery } from 'react-query';
 import './assets/fonts/fonts.css';
 import breadlogo from './images/bread_logo.png';
@@ -24,7 +22,7 @@ const Detail = lazy(() => import('./pages/Detail.js'));
 const Cart = lazy(() => import('./pages/Cart.js'));
 
 function App() {
-  let [shoes, setShoes] = useState(data);
+  let [items, setItems] = useState(data);
   let [event, setEvent] = useState(eventdata);
   let [clickCnt, setClickCnt] = useState(0);
   let [loading, setLoading] = useState(false);
@@ -34,7 +32,8 @@ function App() {
 
   let [watchedItems, setWatchedItems] = useState([]);
   let watchedItemImage = localStorage.getItem('watched');
-  const watchedImg = watchedItemImage ? JSON.parse(watchedItemImage).map(id => shoes[id]) : [];
+  const watchedImg = watchedItemImage ? JSON.parse(watchedItemImage).map(id => items[id]) : [];
+  // 로컬스토리지
   //누가 Detail 페이지 접속하면
   //그 페이지에 보이는 상품id 가져와서
   //localStorage에 watched 항목에 추가
@@ -48,15 +47,6 @@ function App() {
       setWatchedItems(JSON.parse(loadedWatchedItems));
     }
   }, []) 
-
-  let result = useQuery(['userData'], ()=>{
-    return axios.get('https://codingapple1.github.io/userdata.json').then((a)=>{
-      console.log("요청됨");
-      return a.data;
-    });
-  },
-    { staleTime : 2000 }
-)
 
 const images = [
   'https://dessert39.com/html/assets/img/menu/banner/Dbanner_15.png',
@@ -81,17 +71,14 @@ const images = [
             <Nav.Link className='nav-marg' onClick={()=>{ navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
         </Container>
-        {/* <Nav className='ms-auto user-name'>
-          안녕하세요.ㅤ 
-            { result.isLoading ? '로딩중' : result.data.name}님ㅤ
-          </Nav> */}
       </Navbar>
 
       <Suspense fallback={<div>로딩중</div>}>
       <Routes> 
         <Route path='/' element={<>
           {/* <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} /> */}
-
+          
+          {/* 로컬스토리지로 최근에 본 상품 목록 */}
           {/* <div className='watched-item'>최근에 본 상품</div>
           <div className='box'>
             <ul>
@@ -116,33 +103,35 @@ const images = [
         </div>
 
         <h3 class="festival-title-scone">빵굿 신메뉴 스콘</h3>
-        <ItemCard shoes={shoes}/>
+        <ItemCard items={items}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
         <h3 class="festival-title-dacu">빵굿 다쿠아즈</h3>
-        <ItemCard3 shoes={shoes}/>
+        <ItemCard3 items={items}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
         <h3 class="festival-title-oml">빵굿 오믈렛</h3>
-        <ItemCard2 shoes={shoes}/>
+        <ItemCard2 items={items}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
         <h3 class="festival-title-oml">빵굿 도쿄롤</h3>
-        <ItemCard4 shoes={shoes}/>
+        <ItemCard4 items={items}/>
         {loading && <Spinner animation="border" variant="dark" />}
         <br/>
 
+
+        {/* 메뉴 더 있을 경우 버튼 누르면 더 보여줌 */}
         {(clickCnt == 0 || clickCnt == 1) ? 
         <Button variant="outline-dark" onClick={() => {
           //로딩중UI 띄우기
           setLoading(true);
           axios.get(clickCnt == 0 ? 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json' : 'https://raw.githubusercontent.com/yunyoung0531/dessert.json/master/dessert.json')
           .then((result)=>{ 
-            let copy = [...shoes, ...result.data];
-            setShoes(copy);
+            let copy = [...items, ...result.data];
+            setItems(copy);
             console.log("더보기 클릭!");
             //로딩중UI 숨기기
             setLoading(false);
@@ -159,10 +148,10 @@ const images = [
 
 
         {/* URL파라미터 */}
-        <Route path='/detail' element={<Detail shoes={shoes}/>}/>
+        <Route path='/detail' element={<Detail items={items}/>}/>
         <Route path='/detail/:id' element={
           <Suspense fallback={<div>로딩중</div>}>
-            <Detail shoes={shoes}/>
+            <Detail items={items}/>
           </Suspense>
         }/>
 

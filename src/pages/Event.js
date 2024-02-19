@@ -1,13 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 function Event({event}) {
     let displayEvent = event.slice(0, 5);
-
-    // const images = [
-    //     'https://dessert39.com/data/editor/2309/thumb-e7c3418def62f4b182cdac219b675cb7_1694161201_9437_835x1174.jpg',
-    //     'https://dessert39.com/html/assets/img/menu/banner/Dbanner_13.png',
-    // ];
 
     return (
         <>
@@ -23,7 +18,6 @@ function Event({event}) {
                                 <Card.Text>
                                     <h4>{a.content}</h4>
                                 </Card.Text>
-                                
                             </Card.Body>
                         </Card>
                     </div>

@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import chocolateCakeImage from '../images/chocolateCake.png';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { Alert, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import Swal from "sweetalert2";
 import { addToCart } from '../store/dataSlice';
-import { removeToCart } from '../store/dataSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { changePlusCnt } from '../store';
 import { Button, Modal } from 'react-bootstrap';
-import Cart from './Cart';
 import { Link } from 'react-router-dom';
 
 function Detail(props) {
@@ -23,11 +20,13 @@ function Detail(props) {
 
     let dispatch = useDispatch();
     let {id} = useParams();
-    let selectedItem = props.shoes[id];
+    let selectedItem = props.items[id];
     let cart = useSelector(state => state.data);
 
     let navigate = useNavigate();
 
+
+    // 최근 본 상품 기능
     useEffect(()=>{
         console.log(selectedItem.id);
         let watchedItems = localStorage.getItem('watched');
@@ -44,17 +43,6 @@ function Detail(props) {
         }
         localStorage.setItem('watched', JSON.stringify(watchedItems));
     }, [])
-    
-    useEffect(()=>{
-        let timer = setTimeout(()=>{ setAlert(0) }, 2000);
-        console.log("let timer");
-        return () => { //CleanUP-Function
-            //useEffect가 실행 되기 전에 실행되는 코드
-            //기존 ~는 제거 //amount시 실행됨
-            console.log("CleanUP-Function");
-            clearTimeout(timer);
-        }
-    }, [count]);
 
     const handleInputChange = (e) => {
         const value = e.target.value;
@@ -98,18 +86,12 @@ function Detail(props) {
         <button onClick={()=>{ setCount(count + 1); setAlert(1) }}>버튼</button> */}
         <div className="row detail-item">
             <div className="col-md-6 detail-img">
-            <img src={props.shoes[id].image} width="50%" />
+            <img src={props.items[id].image} width="50%" />
             </div>
             <div className="col-md-6">
-            <h4 className="pt-5">{props.shoes[id].title}</h4>
-            {/* <input
-                type='text'
-                value={input}
-                onChange={handleInputChange}
-            />
-            <button onClick={() => {setInput(1)}}>클릭</button> */}
-            <p>{props.shoes[id].content}</p>
-            <h5>{props.shoes[id].price}원</h5>
+            <h4 className="pt-5">{props.items[id].title}</h4>
+            <p>{props.items[id].content}</p>
+            <h5>{props.items[id].price}원</h5>
             <Button variant="outline-light" className="goToCartBtn" onClick={()=>{
                 handleShow();
                 let isItemInCart = cart.some(item => item.id === selectedItem.id);
@@ -129,7 +111,6 @@ function Detail(props) {
 
         <Modal show={show} onHide={handleClose} animation={false} className='modal-cart'>
         <Modal.Header closeButton>
-            {/* <Modal.Title>.</Modal.Title> */}
         </Modal.Header>
         <Modal.Body>장바구니에 담았어요 !</Modal.Body>
         <Modal.Footer>
@@ -153,7 +134,7 @@ function Detail(props) {
             <Nav.Link eventKey="link2" onClick={() => setTab(2)} className='tab2 tab-color'>신메뉴 - 도넛</Nav.Link>
             </Nav.Item>
         </Nav>
-        <TabContent shoes={props.shoes} tab={tab}/>
+        <TabContent items={props.items} tab={tab}/>
         </div>
         </>
     )
@@ -162,9 +143,9 @@ function Detail(props) {
 function TabContent(props) {
     let [fade, setFade] = useState('');
     let targetIds0 = [4, 11, 18, 19];
-    let displayDessert0 = props.shoes.filter(shoe => targetIds0.includes(shoe.id));
+    let displayDessert0 = props.items.filter(item => targetIds0.includes(item.id));
     let targetIds1 = [20, 21];
-    let displayDessert1 = props.shoes.filter(shoe => targetIds1.includes(shoe.id));
+    let displayDessert1 = props.items.filter(item => targetIds1.includes(item.id));
 
     useEffect(()=>{
         setTimeout(()=>{setFade('end')}, 100)
