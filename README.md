@@ -14,6 +14,13 @@
 **메뉴소개**
 
 
+<img src="https://github.com/yunyoung0531/BBANG-GOOD/assets/68066598/01b6f167-b687-4f08-91c1-7b1c6d1695d2"  width="600" height="300"/>
+
+
+
+**(추가) 최근 본 상품 목록**
+
+
 <img src="https://github.com/yunyoung0531/bbang-good/assets/68066598/1e745e64-495b-4cec-9cdf-bc7b92599369.png"  width="600" height="300"/>
 
 
