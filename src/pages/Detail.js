@@ -38,7 +38,7 @@ function Detail(props) {
         if(!watchedItems.includes(selectedItem.id)) {
             watchedItems.push(selectedItem.id);
         }
-        while (watchedItems.length > 6) {
+        while (watchedItems.length > 5) {
             watchedItems.shift();
         }
         localStorage.setItem('watched', JSON.stringify(watchedItems));

@@ -69,8 +69,9 @@
 
 .recent-item-img {
   cursor: pointer;
-  width: 100%;
-  height: auto;
+  width: 90px;
+  height: 90px;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -136,23 +137,35 @@ Button.goToCartBtn:hover {
   color: black;
 }
 
+.watched-item-container {
+  position: fixed;
+  right: -30px; 
+  top: 100px;
+  width: 200px; 
+  height: auto; 
+  overflow-y: auto;
+  color: #313337;
+}
+
+
 .watched-item {
   /* font-weight: 500; */
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   text-align: left;
-  margin-top: -15px;
-  margin-left: 75px;
-  margin-bottom: -44px;
-  font-size: 120%;
+  /* margin-top: 20px; */
+  /* margin-left: 60px; */
+  margin-bottom: -40px;
+  font-size: 100%;
 }
 
 .box {
-  margin : 70px; 
-  padding : 30px;
-  border : 1px solid rgb(182, 182, 182);
+  margin : 40px; 
+  padding : 23px;
+  border : 1px solid rgb(231, 231, 231);
   border-radius : 5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.07), 0 6px 6px rgba(0,0,0,0.07);
+  background-color: rgba( 255, 255, 255, 0.5 );
 }
 
 .card-box {
@@ -165,17 +178,6 @@ Button.goToCartBtn:hover {
   display: flex;
   justify-content: center;
 }
-/* .card-box-event {
-  width: 240px; 
-  height: 240px;
-  margin: 10px; 
-  padding: 10px;
-  border: 1px solid rgb(182, 182, 182);
-  border-radius: 5px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.07), 0 6px 6px rgba(0,0,0,0.07);
-  display: flex;
-  justify-content: center;
-} */
 
 .card-box-tab {
   width: calc(240px);
@@ -195,18 +197,18 @@ Button.goToCartBtn:hover {
   margin: 1%;
   margin-top: -5px;
   margin-bottom: -5px;
-  flex-basis: 48%; /* 모바일 뷰에서는 2개의 이미지를 한 줄에 표시 */
+  flex-basis: 48%; 
   max-width: 48%;
   box-sizing: border-box;
   padding: 10px;
   align-items: center;
-  flex-direction: column;
+  
 }
 
 .recent-items-container {
   display: flex;
   justify-content: center;
-  /* overflow-x: auto; */
+  align-items: cneter;
   flex-wrap: wrap;
 }
 
@@ -228,8 +230,6 @@ Button.goToCartBtn:hover {
 }
 
 .recent-item-title {
-  /* display: flex; */
-  /* justify-content: center; */
   text-align: center;
 }
 
@@ -240,10 +240,6 @@ Button.goToCartBtn:hover {
 .App  {
   font-family: '210 옴니고딕OTF 035', sans-serif !important;
 }
-
-/* .modal-content-o {
-  height: 620px;
-} */
 
 .modal-shoe-detail .modal-content  {
   font-family: '210 옴니고딕OTF 035', sans-serif !important;
@@ -273,8 +269,8 @@ Button.goToCartBtn:hover {
 .price-button-container {
   display: flex;
   flex-direction: column; /* 수직 방향으로 항목 정렬 */
-  align-items: center;    /* 가운데 정렬 */
-  gap: 10px;              /* 요소 간 간격 */
+  align-items: center;    
+  gap: 10px;              
 }
 
 
@@ -300,9 +296,9 @@ Button.goToCartBtn:hover {
 }
 
 .btn-animation.btn-outline-dark:hover {
-  background-color: transparent;  /* 배경색을 투명하게 설정 */
-  border-color: #1c1c1c;          /* 테두리 색상을 원래대로 유지 */
-  color: #1c1c1c;                 /* 텍스트 색상을 원래대로 유지 */
+  background-color: transparent; 
+  border-color: #1c1c1c;         
+  color: #1c1c1c;                
 }
 
 .btn-animation:before { 
@@ -340,11 +336,6 @@ span { position: relative; }
   font-size: 20px;
 }
 
-.navbar-color  {
-  /* margin: 10px 0;
-  background-color: #bb3232 !important; */
-}
-
 
 .btn-animation2 {
   position: relative;
@@ -362,9 +353,9 @@ span { position: relative; }
 }
 
 .btn-animation2.btn-outline-dark:hover {
-  background-color: transparent;  /* 배경색을 투명하게 설정 */
-  border-color: #1c1c1c;          /* 테두리 색상을 원래대로 유지 */
-  color: #1c1c1c;                 /* 텍스트 색상을 원래대로 유지 */
+  background-color: transparent;  
+  border-color: #1c1c1c;        
+  color: #1c1c1c;               
 }
 
 .btn-animation2:before { 
@@ -389,30 +380,10 @@ span { position: relative; }
 	100% { transform: translate(-50%) rotate(360deg); } 
 } 
 
-/* .festival-title {
-  position: relative;
-  padding-top: 90px; 
-  margin-left: -70%;
-}
-
-.festival-title::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px; 
-  background: rgba(211, 211, 211, 0.5);
-  z-index: -1; 
-} */
-
 .festival-title {
   position: relative;
   padding-top: 110px; 
   margin-left: -62%;
-  /* left: 0; */
-  /* text-align: left; */
-  /* margin-left: 50%; */
 }
 
 
@@ -490,13 +461,13 @@ span { position: relative; }
 .festival-title-oml::before {
   content: "";
   position: absolute;
-  top: 36px;       /* 위치를 약간 아래로 조절 */
-  left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
-  width: 6%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
-  height: 19px;    /* 밑줄 두께 설정 */
+  top: 36px;     
+  left: 50%;     
+  width: 6%;     
+  height: 19px;  
   background: rgba(255, 226, 168, 0.5);
   z-index: -1; 
-  transform: translateX(-50%); /* 가운데 정렬 유지 */
+  transform: translateX(-50%); 
 }
 
 .festival-title-dacu {
@@ -508,13 +479,13 @@ span { position: relative; }
 .festival-title-dacu::before {
   content: "";
   position: absolute;
-  top: 36px;       /* 위치를 약간 아래로 조절 */
-  left: 50%;      /* 가운데 정렬을 위한 기본 위치 설정 */
-  width: 7%;     /* 원하는 밑줄 너비를 설정. 필요에 따라 조절 */
-  height: 19px;    /* 밑줄 두께 설정 */
+  top: 36px;      
+  left: 50%;      
+  width: 7%;    
+  height: 19px;   
   background: rgba(255, 226, 168, 0.5);
   z-index: -1; 
-  transform: translateX(-50%); /* 가운데 정렬 유지 */
+  transform: translateX(-50%);
 }
 
 .logo-style {
@@ -555,8 +526,6 @@ span { position: relative; }
   margin-bottom: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
-  /* max-width: 17rem; */
-  /* max-height: 60rem; */
 }
 .event-card:hover {
   box-shadow: 0 7px 13px rgba(0, 0, 0, 0.1), 0 9px 25px rgba(0, 0, 0, 0.1);

@@ -46,7 +46,9 @@ function App() {
     if (loadedWatchedItems) {
       setWatchedItems(JSON.parse(loadedWatchedItems));
     }
+    
   }, []) 
+  
 
 const images = [
   'https://dessert39.com/html/assets/img/menu/banner/Dbanner_15.png',
@@ -79,20 +81,6 @@ const images = [
           {/* <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} /> */}
           
           {/* 로컬스토리지로 최근에 본 상품 목록 */}
-          {/* <div className='watched-item'>최근에 본 상품</div>
-          <div className='box'>
-            <ul>
-            <div className="recent-items-container">
-              {watchedImg.map((itemId, index) => (
-                <div key={index} className="recent-item">
-                  <img onClick={()=>{navigate(`/detail/${itemId.id}`)}} className="recent-item-img" src={itemId.image} style={{ width: '135px' }}/>
-                  <div className="recent-item-title">{itemId.title}</div>
-                </div>
-              ))}
-            </div>
-            </ul>
-          </div> */}
-        
         <h2 class="festival-title">빵굿 치즈 페스티벌</h2>
         <div className='container'>
           <ul className='row'>
@@ -100,8 +88,22 @@ const images = [
                 <div key={index} className='festival-item ' style={{ backgroundImage: `url(${image})` }}></div>
             ))}
           </ul>
+          <div className="watched-item-container">
+            <div className='watched-item'>최근에 본 상품</div>
+            <div className='box'>
+              <ul>
+              <div className="recent-items-container" style={{ marginRight: '25px'}}>
+                {watchedImg.map((itemId, index) => (
+                  <div key={index} className="recent-item">
+                    <img onClick={()=>{navigate(`/detail/${itemId.id}`)}} className="recent-item-img" src={itemId.image} />
+                  </div>
+                ))}
+              </div>
+              </ul>
+            </div>
+          </div>
         </div>
-
+        
         <h3 class="festival-title-scone">빵굿 신메뉴 스콘</h3>
         <ItemCard items={items}/>
         {loading && <Spinner animation="border" variant="dark" />}
