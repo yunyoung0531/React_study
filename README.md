@@ -64,9 +64,7 @@ https://bbang-goood.vercel.app/
 ## 💫기술 스택
 
 - React
-- React Bootstrap
-- Redux
-- react-router-dom
+- Redux-toolkit
 - Axios
 
 
