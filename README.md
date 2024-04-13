@@ -62,7 +62,6 @@
 
 
 ## ✨페이지 주소
-https://bbang-good.netlify.app/
 
 
 https://bbang-goood.vercel.app/
@@ -72,7 +71,7 @@ https://bbang-goood.vercel.app/
 
 - React
 - Redux-toolkit
-- Axios
+
 
 
 디자인 참고 - 디저트39
